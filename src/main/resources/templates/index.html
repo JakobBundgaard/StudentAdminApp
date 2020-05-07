@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Administration</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+<!-- TODO: MENU -->
+<!-- TODO: Table of students -->
+<div class="container">
+    <h1>Student administration</h1>
+
+    <table>
+        <tr>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th>Startdato</th>
+            <th>Edit</th>
+        </tr>
+
+        <tr th:each="student : ${students}">
+            <th th:text="${student.fornavn}"></th>
+            <th th:text="${student.efternavn}"></th>
+            <th th:text="${student.startdato}"></th>
+            <th><a th:href="@{/student(id=${student.id_student})}"><button>click me</button></a></th>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>
